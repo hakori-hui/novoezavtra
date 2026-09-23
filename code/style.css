@@ -9,12 +9,15 @@
 :root {
   --red: #E63946;
   --red-deep: #B31E2A;
+  --dark-red: #870000;
+  --ligt-red: #FF0000;
   --orange: #FF7A3C;
   --sun: #FFC93C;
   --cream: #FFF6EE;
   --dark: #1B1214;
-  --text: #2a2222;
+  --text: #FFFFFF;
   --muted: #7a6a6a;
+  --red_forn: #fdbac0;
 }
 
 /* ============================================
@@ -22,7 +25,11 @@
    ============================================ */
 body {
   font-family: 'Inter', 'Segoe UI', Tahoma, sans-serif;
-  background: var(--cream);
+  background-image: url("../img/Без_названия36_20260923174419.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
   color: var(--text);
   display: grid;
   grid-template-columns: 260px 1fr;
@@ -40,8 +47,7 @@ body {
 header {
   grid-area: header;
   background:
-    radial-gradient(circle at 88% 15%, rgba(255, 201, 60, 0.55), transparent 55%),
-    linear-gradient(120deg, #B31E2A 0%, #E63946 35%, #FF7A3C 70%, #FFC93C 100%);
+    var(--ligt-red);
   color: #fff;
   padding: 24px 40px;
   display: flex;
@@ -57,7 +63,7 @@ header::after {
   position: absolute;
   bottom: 0; left: 0;
   width: 100%; height: 5px;
-  background: linear-gradient(90deg, #FFC93C, #FF7A3C, #E63946, #B31E2A);
+
 }
 
 .logo {
@@ -71,9 +77,20 @@ header::after {
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
   color: #fff;
   text-decoration: none;
+
 }
 
 .logo svg { width: 26px; height: 26px; }
+
+.logo {
+  display: inline-flex;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+  display: block;
+}
 
 .slogan {
   font-size: 13px;
@@ -95,7 +112,7 @@ nav {
   background: #ffffff;
   padding: 30px 0;
   position: relative;
-  border-right: 1px solid #ffe1d0;
+
 }
 
 nav::after {
@@ -103,23 +120,57 @@ nav::after {
   position: absolute;
   top: 0; right: 0;
   width: 4px; height: 100%;
-  background: linear-gradient(180deg, #FFC93C, #FF7A3C, #E63946, #B31E2A);
+
 }
 
 nav ul { list-style: none; }
+
+.square_menu {
+  font-size: 16px;
+  line-height: 1.5;
+
+  width: 11h;
+  min-height: 100px;
+  height: auto;
+  border-radius: 12px;
+  margin: 10px;
+
+
+  display: flex;
+  flex-direction: column;
+  justify-self: top;
+  align-items: top;
+  text-align: top;
+
+
+  background-color: var(--dark-red);
+  box-sizing: border-box;
+  padding-top:2px;
+  padding-left: 2px;
+  align-self: flex-start;
+
+}
+
+.square_menu a img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  flex-shrink: 0;
+
+  filter: invert(1);
+}
 
 nav a {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: #5a4a4a;
+  color: var(--text);
   padding: 15px 26px;
   text-decoration: none;
   font-size: 15px;
   font-weight: 600;
-  border-left: 4px solid transparent;
   transition: all 0.25s ease;
-  border-radius: 0 14px 14px 0;
+  border-radius: 12px;
   margin-right: 8px;
 }
 
@@ -133,7 +184,7 @@ nav a svg {
   transition: stroke 0.25s, transform 0.25s;
   flex-shrink: 0;
 }
-
+/*
 nav a:hover {
   background: linear-gradient(90deg, rgba(255, 122, 60, 0.12), transparent);
   color: var(--red-deep);
@@ -142,11 +193,10 @@ nav a:hover {
 }
 
 nav a:hover svg { stroke: var(--orange); transform: scale(1.15); }
-
+*/
 nav a.active {
-  background: linear-gradient(90deg, rgba(230, 57, 70, 0.14), transparent);
-  color: var(--red-deep);
-  border-left-color: var(--red);
+  color: var(--text);
+  background-color: var(--ligt-red);
 }
 
 
@@ -166,22 +216,22 @@ h1 {
   font-weight: 800;
   line-height: 1.12;
   margin-bottom: 28px;
-  color: var(--dark);
+  color: var(--text);
   letter-spacing: -0.8px;
 }
 
 h1 em {
   font-style: normal;
-  background: linear-gradient(90deg, #B31E2A, #E63946 40%, #FF7A3C 70%, #FFC93C);
+  background: var(--text);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-decoration: underline;
 }
-
 h2 {
   font-size: 24px;
   font-weight: 700;
-  color: var(--dark);
+  color: var(--text);
   margin: 40px 0 16px;
   display: flex;
   align-items: center;
@@ -193,8 +243,6 @@ h2::before {
   width: 28px;
   height: 5px;
   border-radius: 5px;
-  background: linear-gradient(90deg, #E63946, #FF7A3C, #FFC93C);
-  box-shadow: 0 0 12px rgba(255, 122, 60, 0.5);
 }
 
 p {
@@ -208,14 +256,11 @@ p {
    ВВОДНЫЙ БЛОК
    ============================================ */
 .intro-block {
-  background: #ffffff;
+  background: var(--ligt-red);
   border-radius: 24px;
   padding: 34px 38px;
-  margin-bottom: 36px;
-  box-shadow: 0 12px 36px rgba(230, 57, 70, 0.13);
   position: relative;
   overflow: hidden;
-  border: 1px solid #ffe1d0;
 }
 
 .intro-block::before {
@@ -223,10 +268,10 @@ p {
   position: absolute;
   top: 0; left: 0;
   width: 7px; height: 100%;
-  background: linear-gradient(180deg, #FFC93C, #FF7A3C, #E63946);
+
 }
 
-.intro-block p { font-size: 18px; margin: 0; color: #2a2222; }
+.intro-block p { font-size: 18px; margin: 0; color: var(--text); }
 
 /* ============================================
    КАРТОЧКИ
@@ -239,14 +284,12 @@ p {
 }
 
 .card {
-  background: #fff;
+  background:var(--ligt-red);
   padding: 30px 28px;
-  border-radius: 22px;
-  box-shadow: 0 6px 22px rgba(179, 30, 42, 0.08);
+  border-radius: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
-  border: 1px solid #ffe9dd;
   text-decoration: none;
   color: inherit;
   display: block;
@@ -257,15 +300,22 @@ p {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 5px;
-  background: linear-gradient(90deg, #E63946, #FF7A3C, #FFC93C);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.35s ease;
 }
 
+.card-image img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  flex-shrink: 0;
+
+  filter: invert(1);
+} 
+
 .card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 18px 40px rgba(230, 57, 70, 0.22);
 }
 
 .card:hover::before { transform: scaleX(1); }
@@ -276,14 +326,12 @@ p {
   justify-content: center;
   width: 52px; height: 52px;
   border-radius: 16px;
-  background: linear-gradient(135deg, #FFE9A8, #FFC93C);
   margin-bottom: 18px;
-  box-shadow: 0 6px 16px rgba(255, 201, 60, 0.45);
 }
 
 .card-icon svg {
   width: 26px; height: 26px;
-  stroke: #8a3a10;
+  stroke: var(--text);
   fill: none;
   stroke-width: 2;
   stroke-linecap: round;
@@ -291,7 +339,7 @@ p {
 }
 
 .card h3 {
-  color: var(--dark);
+  color: var(--text);
   font-size: 19px;
   font-weight: 700;
   margin-bottom: 10px;
@@ -299,7 +347,7 @@ p {
 
 .card p {
   font-size: 14.5px;
-  color: var(--muted);
+  color: var(--text);
   margin: 0;
   line-height: 1.65;
 }
@@ -315,11 +363,9 @@ p {
 }
 
 .news-item {
-  background: #fff;
+  background: var(--ligt-red);
   border-radius: 20px;
   padding: 26px 28px;
-  box-shadow: 0 6px 20px rgba(179, 30, 42, 0.08);
-  border: 1px solid #ffe9dd;
   transition: transform 0.28s ease, box-shadow 0.28s ease;
   position: relative;
 }
@@ -336,7 +382,6 @@ p {
   letter-spacing: 1px;
   text-transform: uppercase;
   color: #fff;
-  background: linear-gradient(120deg, #B31E2A, #FF7A3C);
   padding: 5px 12px;
   border-radius: 999px;
   margin-bottom: 14px;
@@ -370,17 +415,15 @@ p {
   grid-template-columns: 84px 1fr auto;
   align-items: center;
   gap: 22px;
-  background: #fff;
+  background:  var(--ligt-red);
   border-radius: 18px;
   padding: 20px 26px;
-  box-shadow: 0 6px 20px rgba(179, 30, 42, 0.08);
   border: 1px solid #ffe9dd;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .event:hover {
   transform: translateX(6px);
-  box-shadow: 0 12px 30px rgba(230, 57, 70, 0.18);
 }
 
 .event-date {
@@ -388,7 +431,7 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #B31E2A, #FF7A3C);
+  background: var(--dark-red);
   color: #fff;
   border-radius: 14px;
   padding: 10px 6px;
