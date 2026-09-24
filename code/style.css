@@ -352,6 +352,27 @@ p {
   color: var(--text);
   margin: 0;
   line-height: 1.65;
+
+  visibility: hidden;
+  overflow: hidden;
+  transform: translateY(15px);
+  max-height: 0;
+  opacity: 0;
+  
+  transition: 
+    opacity 2s ease-out,
+    max-height 2s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 2s cubic-bezier(0.25, 1, 0.5, 1),
+    visibility 2s;
+}
+
+.card:hover p {
+  opacity: 1;
+  visibility: visible;
+  overflow: visible;
+  transform: translateY(0);
+  margin-top: 12px;
+  max-height: 80px;
 }
 
 /* ============================================
