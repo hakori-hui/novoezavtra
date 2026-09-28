@@ -23,6 +23,16 @@
 /* ============================================
    КАРКАС СТРАНИЦЫ
    ============================================ */
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 body {
   font-family: 'Inter', 'Segoe UI', Tahoma, sans-serif;
   background-image: url("../img/Без_названия36_20260923174419.png");
@@ -39,12 +49,16 @@ body {
     "nav main"
     "footer footer";
   min-height: 100vh;
+
+  animation: pageFadeIn 0.4s ease-in-out forwards;
+  opacity: 0;
 }
 
 /* ============================================
    ШАПКА
    ============================================ */
 header {
+  flex-direction: row-reverse;
   grid-area: header;
   background:
     var(--ligt-red);
@@ -91,7 +105,7 @@ header::after {
 
 .logo img {
   width: 50px;
-  height: 50px;
+  height: auto;
   display: block;
 }
 
@@ -112,8 +126,12 @@ header::after {
 nav {
   grid-area: nav;
   background: #ffffff;
-  padding: 30px 0;
-  position: relative;
+  padding: 30px 1 30px;
+  position: sticky;      
+  top: 0;                
+  height: 100vh;         
+  align-self: start;     
+  overflow-y: auto;;
 
 }
 
@@ -127,30 +145,73 @@ nav::after {
 
 nav ul { list-style: none; }
 
+
 .square_menu {
   font-size: 16px;
   line-height: 1.5;
 
-  width: 11h;
+  width: 260px;           
   min-height: 100px;
   height: auto;
   border-radius: 12px;
   margin: 10px;
 
-
   display: flex;
   flex-direction: column;
-  justify-self: top;
-  align-items: top;
-  text-align: top;
-
+  
+  justify-content: flex-start; 
 
   background-color: var(--dark-red);
   box-sizing: border-box;
-  padding-top:2px;
-  padding-left: 2px;
-  align-self: flex-start;
+  padding: 15px 10px;       
+  align-self: flex-start;   
+}
 
+.square_menu ul {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.square_menu .nav-marker {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background-color: var(--ligt-red); 
+
+  pointer-events: none;
+  z-index: 0;
+
+  transition: top 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.square_menu a {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  
+
+  color: #e0e0e0; 
+  
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+
+  background: transparent !important;
+  transition: color 0.25s ease;
+}
+
+
+.square_menu a:hover {
+  color: #ffffff;
 }
 
 .square_menu a img {
@@ -158,9 +219,9 @@ nav ul { list-style: none; }
   height: 20px;
   object-fit: contain;
   flex-shrink: 0;
-
-  filter: invert(1);
+  filter: invert(1); 
 }
+
 
 nav a {
   display: flex;
@@ -285,6 +346,17 @@ p {
   margin-top: 26px;
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .card {
   background:var(--ligt-red);
   padding: 30px 28px;
@@ -295,6 +367,9 @@ p {
   text-decoration: none;
   color: inherit;
   display: block;
+
+  animation: fadeInUp 1.4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  opacity: 0;
 }
 
 .card::before {
