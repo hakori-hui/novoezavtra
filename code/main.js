@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("is-ready");
+    
     const menuLinks = document.querySelectorAll(".square_menu a");
     const marker = document.querySelector(".square_menu .nav-marker");
     //Нахждение маркера и получение текущего файла
@@ -22,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if(activeLink) {
         const linkTop = activeLink.offsetTop;
         const linkHeight = activeLink.offsetHeight;
-
+ 
         marker.style.height = `${linkHeight}px`;
         
         const lastTop = sessionStorage.getItem("nav-last-top");
@@ -39,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
             marker.style.top = `${linkTop}px`;
         }
         window.addEventListener("beforeunload", () => {
-            sessionStorage.setItem("nav-last-top", lastTop);
+            sessionStorage.setItem("nav-last-top", linkTop);
         });
     }
 });

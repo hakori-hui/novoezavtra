@@ -54,6 +54,10 @@ body {
   opacity: 0;
 }
 
+body.is-redy {
+  animation: pageFadeIn 0.4 ease-in-out forwards;
+}
+
 /* ============================================
    ШАПКА
    ============================================ */
@@ -127,20 +131,12 @@ nav {
   grid-area: nav;
   background: #ffffff;
   padding: 30px 1 30px;
-<<<<<<< HEAD
   position: sticky;      
   top: 0;                
   height: 100vh;         
   align-self: start;     
   overflow-y: auto;;
 
-=======
- position: sticky;      /* было relative — стало sticky */
-  top: 0;                /* прилипает к верху экрана */
-  height: 100vh;         /* растягивается на всю высоту экрана */
-  align-self: start;     /* важно: не растягиваться по grid-строке */
-  overflow-y: auto;
->>>>>>> 7ec49ee02f7e26b6bf57bc4f202f4519606e4154
 }
 
 nav::after {
@@ -456,6 +452,10 @@ p {
   transform: translateY(0);
   margin-top: 12px;
   max-height: 80px;
+}
+
+body.is-ready {
+  animation: fadeInUp 2s cubic-bezier(0.25, 1, 0.5, 0.1) forwards;
 }
 
 /* ============================================
