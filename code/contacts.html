@@ -5,6 +5,66 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Контакты — Новое Завтра</title>
   <link rel="stylesheet" href="style.css">
+<style>
+  .socials {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .social-icon:hover {
+    transform: scale(1.1);
+  }
+
+  .social-icon:active {
+    transform: scale(0.95);
+  }
+
+  .social-icon svg {
+    width: 30px;
+    height: 30px;
+    fill: #fff;
+  }
+
+  /* YouTube — красный */
+  .youtube {
+    background: linear-gradient(135deg, #FF0000, #cc0000);
+    box-shadow: 0 4px 12px rgba(255, 0, 0, 0.4);
+  }
+  .youtube:hover {
+    box-shadow: 0 6px 18px rgba(255, 0, 0, 0.6);
+  }
+
+  /* TikTok — чёрный */
+  .tiktok {
+    background: #000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  }
+  .tiktok:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.7);
+  }
+
+  /* X — чёрный */
+  .x {
+    background: #000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  }
+  .x:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.7);
+  }
+</style
+
+
 </head>
 <body>
 
@@ -26,6 +86,7 @@
         <li><a href="blacklist.html"><img src="../img/ban-circle-symbol.png" alt="blacklist"></svg>Чёрный список</a></li>
         <li><a href="join.html"><img src="../img/people.png" alt="people"></svg>Присоединиться</a></li>
         <li><a href="contacts.html"><img src="../img/contact-us.png" alt="comtact"></svg>Контакты</a></li>
+         <li><a href="documents.html"><img src="../img/contact-us.png" alt="comtact"></svg>Документация</a></li>
       </ul>
     </nav>
 
@@ -60,9 +121,28 @@
         <span class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
         <h3>Соцсети</h3>
         <ul class="list">
-        <a href="https://www.youtube.com/@socdem_russia">Youtube</a>
-        <a href="https://tiktok.com/@socdem_russia">TikTok</a>
-        <a href="https://x.com/NovoyeZavtra">X(Twitter)</a>
+        <div class="socials">
+
+    <!-- YouTube -->
+    <a href="https://www.youtube.com/@socdem_russia" target="_blank" class="social-icon youtube" aria-label="YouTube">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8zM9.6 15.6V8.4l6.25 3.6-6.25 3.6z"/>
+      </svg>
+    </a>
+
+    <!-- TikTok -->
+    <a href="https://www.tiktok.com/@socdem_russia" target="_blank" class="social-icon tiktok" aria-label="TikTok">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16.6 5.82s.51.5 0 0A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6 0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64 0 3.33 2.76 5.7 5.69 5.7 3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48z"/>
+      </svg>
+    </a>
+
+    <!-- X -->
+    <a href="https://x.com/NovoyeZavtra" target="_blank" class="social-icon x" aria-label="X">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18.9 2h3.68l-8.04 9.19L24 22h-7.4l-5.8-7.58L4.16 22H.47l8.6-9.83L0 2h7.6l5.24 6.93L18.9 2zm-1.3 17.8h2.04L6.5 4.1H4.3l13.3 15.7z"/>
+      </svg>
+    </a>
         </ul>
       </div>
     </div>
